@@ -1,3 +1,4 @@
+// Last updated: 2025-10-29T09:55:47+05:00
 #include<stdio.h>
 int main() {
 int curr=1,next, prev=0,sum=0,i;
