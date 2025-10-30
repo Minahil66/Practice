@@ -1,3 +1,4 @@
+// Last updated: 2025-10-30T20:34:53+05:00
 // Last updated: 2025-10-30T20:32:31+05:00
 int totalMoney(int n) {
     int total = 0;
