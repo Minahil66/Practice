@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+void CountFrequency(int array1[], int size);
+int main() {
+    int a_size;
+    printf("Enter the number of elements of array: ");
+    scanf("%d", &a_size);
+    int array[a_size];
+    printf("Generated array: ");
+    for(int i=0; i<a_size;i++){
+        array[i]= rand() % 11;
+        printf(" %d, ", array[i]);
+    }
+    printf("\n");
+    CountFrequency(array, a_size);
+    } 
+void CountFrequency(int array1[], int size) {
+    int track[size];
+    for(int i=0;i<size;i++){
+    int count=0;
+    if(track[i]==1){
+    continue; 
+    }
+    for (int j=0;j<size;j++){
+    if(array1[i]==array1[j]){
+    count++;
+    track[j]=1;
+    }
+    }
+    printf("%d occurence: %d\n", array1[i], count);
+    }
+    }
