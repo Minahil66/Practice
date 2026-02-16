@@ -1,0 +1,52 @@
+// Last updated: 2026-02-16T21:46:53+05:00
+#include<iostream>
+#include<cstring>
+using namespace std;
+class UniqueString{
+    char* data;
+    public:
+    UniqueString(const char* s){
+        data=new char[strlen(s)+1];
+        strcpy(data,s);
+    }
+    UniqueString(const UniqueString& obj){
+        data=new char[strlen(obj.data)+1];
+        strcpy(data, obj.data);
+    }
+    ~UniqueString(){
+        delete[] data;
+    }    
+    void setString(const char* st){
+        delete[] data;
+        data=new char[strlen(st)+1];
+        strcpy(data,st);
+    }
+    void display(){
+    cout << data << endl;
+    }
+};
+class SharedString{
+    const char* data;
+    public:
+    SharedString(const char* s): data(s){
+    }
+    SharedString(const SharedString& obj):data(obj.data){
+    }
+    void print(){
+        cout<<data<<endl;
+    }
+
+};
+int main(){
+    UniqueString u1("Hello");  
+UniqueString u2 = u1;      
+
+SharedString s1("Hello");  
+SharedString s2 = s1;  
+    u1.display();  // Hello
+    u2.display();  // Hello
+    
+    s1.print();    // Hello
+    s2.print();    // Hello
+
+}
