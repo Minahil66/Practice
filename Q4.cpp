@@ -1,57 +1,30 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
-
-void add(int b1[3][3], int b2[3][3]){
-    int result[3][3];
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-        result[i][j]=b1[i][j]+b2[i][j];
-        }
-    }
-    cout<<"sum of martrix: "<<endl;
-     for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout<<" "<<result[i][j];
-        }
-        cout<<endl;
-    }
-}
-void multiply(int a1[3][3], int a2[3][3]){
-    int result[3][3]={0};
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            int sum=0;
-            for(int k=0;k<3;k++){
-                sum+=a1[i][k]*a2[k][j];
-            }
-            result[i][j]=sum;
-        }
-    }
-        cout<<"Product of martrices: "<<endl;
-     for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout<<" "<<result[i][j];
-        }
-        cout<<endl;
-    }
-}
-int main(){
-    int mat1[3][3];
-    int mat2[3][3];
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout<<"Enter Element["<<i+1<<"]["<<j+1<<"]"<<"of matrix 1: ";
-            cin>>mat1[i][j];
-        }
-    }
+ int main(){
+    int myteam, number1, number2, count=0, ecount=0;
+    srand(time(0));
+    myteam=(rand() % 6)+1;
+    cout<<"Total No. of players in your team: "<<myteam<<endl;
+    for(int i=1;i<=myteam;i++){
+        number1=rand() % 11;
+        number2=rand() % 11;
+        cout<<"Pair of numbers: "<<endl;
+        cout<<"Number 1: "<<number1<<endl;
+        cout<<"Number 2: "<<number2<<endl;
+        if(number1==number2){
+            cout<<"Enemy got hit by your team!"<<endl;
+            count++;
+        }else{
+            cout<<"You got hit by enemy team!"<<endl;
+            ecount++;
+        }}
     cout<<endl;
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-        cout<<"Enter Element["<<i+1<<"]["<<j+1<<"]"<<"of matrix 2: ";            cin>>mat2[i][j];
-        }
+    if(count>ecount){
+        cout<<"Game Over! You won."<<endl;
     }
-    cout<<"\n";
-    add(mat1, mat2);
-    cout<<endl;
-    multiply(mat1, mat2);
-}
+    else{
+        cout<<"Game Over! You lost."<<endl;
+    }
+ }
