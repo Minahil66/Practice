@@ -1,0 +1,28 @@
+// Last updated: 2026-02-27T21:37:47+05:00
+#include<iostream>
+using namespace std;
+class Tollbooth{
+    private:
+    int total;
+    double money;
+    public:
+    Tollbooth():total(0), money(0.0){
+    }
+    void payingCar(){
+        total++;
+        money+=0.50;
+    }
+    void dislay(){
+        cout<<"Total cars passed: "<<total<<"\nTotal amount: "<<money<<endl;
+    }
+};
+int main(){
+    Tollbooth booth;
+    cout<<"Car 1 passes:"<<endl;
+    booth.payingCar();
+    cout<<"Car 2 passes:"<<endl;
+    booth.payingCar();
+    cout<<"Car 3 passes:"<<endl;
+    booth.payingCar();
+    booth.dislay();
+}
