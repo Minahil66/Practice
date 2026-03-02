@@ -1,0 +1,28 @@
+// Last updated: 2026-03-02T21:36:14+05:00
+#include<iostream>
+using namespace std;
+class Copy{
+    private:
+    int num;
+    public:
+    Copy(int number){
+        num=number;
+        cout<<"im a constructor"<<endl;
+    }
+
+    Copy(const Copy& obj){
+        num=obj.num;
+        cout<<"Im copy constructor"<<endl;
+    }
+    void display(){
+        cout<<"Number: "<<num<<endl;
+    }
+};
+int main(){
+    Copy val1(17);
+    val1.display();
+    Copy val2(val1);   //same thing
+    val2.display();
+    Copy val3 = val1;  //same thing
+    val3.display();
+}
