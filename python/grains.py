@@ -1,3 +1,5 @@
+"""Module providing a function printing python version."""
+
 def square(number):
     power=number-1
     if number>64 or number<1:
